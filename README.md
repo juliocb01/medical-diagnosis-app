@@ -6,32 +6,32 @@ This project is a mobile application developed using FlutterFlow that allows pat
 
 ## Project Structure
 
+```graphql
 project/
-├── api/ # Flask API
-│ ├── init.py # Initialize Flask app and extensions
-│ ├── app.py # Main API entry point
-│ ├── models.py # Database models
-│ ├── database.py # Database connection and functions
-│ ├── routes/ # Directory for route definitions
-│ │ ├── init.py # Initialize routes
-│ │ ├── diagnose.py # Route for diagnosis
-│ │ └── doctors.py # Route for doctor-related operations
-│ ├── services/ # Directory for service layers
-│ │ ├── init.py # Initialize services
-│ │ ├── diagnose_service.py # Service logic for diagnosis
-│ │ └── doctor_service.py # Service logic for doctor operations
-│ ├── utils/ # Utility functions
-│ │ ├── init.py # Initialize utils
-│ │ ├── time_utils.py # Utilities for time-related operations
-│ │ └── prompt_utils.py # Utilities for prompt generation
-│ └── requirements.txt # Project dependencies
-├── flutter_app/ # FlutterFlow project (exported code)
-│ └── ...
-└── scripts/ # Helper scripts
-└── load_doctors.py # Script to load doctor data
-
-markdown
-Copy code
+├── api/                    # Flask API
+│   ├── __init__.py         # Initialize Flask app and extensions
+│   ├── app.py              # Main API entry point
+│   ├── models.py           # Database models
+│   ├── database.py         # Database connection and functions
+│   ├── routes/             # Directory for route definitions
+│   │   ├── __init__.py     # Initialize routes
+│   │   ├── diagnose.py     # Route for diagnosis
+│   │   └── doctors.py      # Route for doctor-related operations
+│   ├── services/           # Directory for service layers
+│   │   ├── __init__.py     # Initialize services
+│   │   ├── diagnose_service.py # Service logic for diagnosis
+│   │   └── doctor_service.py   # Service logic for doctor operations
+│   ├── utils/              # Utility functions
+│   │   ├── __init__.py     # Initialize utils
+│   │   ├── gemini_client.py # Initialize Gemini client
+│   │   ├── time_utils.py   # Utilities for time-related operations
+│   │   └── prompt_utils.py # Utilities for prompt generation
+│   └── requirements.txt    # Project dependencies
+├── flutter_app/            # FlutterFlow project (exported code)
+│   └── ...
+└── scripts/                # Helper scripts
+    └── load_doctors.py     # Script to load doctor data
+```
 
 ## Getting Started
 

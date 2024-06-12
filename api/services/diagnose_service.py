@@ -1,8 +1,19 @@
-from api import db, endpoint, nlp
-from api.models import Doctor, Patient
-from api.utils.time_utils import get_current_time, get_current_day
+from api import nlp
 from api.utils.prompt_utils import generate_prompt
-import medspacy
+from api.utils.time_utils import get_current_time, get_current_day
+from api.utils.gemini_client import initialize_gemini_client
+from api.models import Doctor
+
+def call_gemini_api(prompt):
+    client, endpoint = initialize_gemini_client()
+    instance = {"content": prompt}
+    instances = [instance]
+    
+    response = client.predict(
+        endpoint=endpoint,
+        instances=instances
+    )
+    return response.predictions[0]['content']
 
 def diagnose_patient(data):
     symptoms_text = data.get('symptoms')
@@ -17,14 +28,13 @@ def diagnose_patient(data):
     prompt = generate_prompt(symptoms_text, medical_history, patient_info)
 
     # Call Gemini API
-    response = endpoint.predict(prompt)
-    diagnosis_text = response.text
+    response_text = call_gemini_api(prompt)
 
     # Find Matching Doctors
     recommended_doctors = find_doctors_by_symptoms(extracted_symptoms)
 
     return {
-        "message": diagnosis_text,
+        "message": response_text,
         "recommended_doctors": recommended_doctors,
         "extracted_symptoms": extracted_symptoms,
         "patient_info": patient_info
