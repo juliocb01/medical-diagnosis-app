@@ -37,12 +37,13 @@ project/
 
 ### Prerequisites
 
-- Python 3.7+
+- Python 3.9+
 - Flask
 - Flask-SQLAlchemy
 - Google Cloud AI Platform
 - medspacy
 - dotenv
+- google-cloud-aiplatform
 
 ### Installation
 
@@ -72,7 +73,9 @@ project/
 
     ```env
     DATABASE_URL=sqlite:///your_database.db
-    GEMINI_ENDPOINT_NAME=your_gemini_endpoint_name
+    GEMINI_ENDPOINT_NAME=your_endpoint_id
+    GEMINI_PROJECT_ID=your_project_id
+    GEMINI_LOCATION=your_location
     ```
 
 5. **Initialize the database:**
@@ -85,6 +88,14 @@ project/
 
     ```bash
     python scripts/load_doctors.py
+    ```
+
+7. **Verify Google Cloud Authentication:**
+
+    Ensure you are authenticated with Google Cloud:
+
+    ```bash
+    gcloud auth application-default login
     ```
 
 ### Running the Application
