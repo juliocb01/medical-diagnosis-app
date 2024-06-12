@@ -50,7 +50,7 @@ project/
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/medical-diagnosis-app.git
+    git clone git@github.com:juliocb01/medical-diagnosis-app.git
     cd medical-diagnosis-app
     ```
 
