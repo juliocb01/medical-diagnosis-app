@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project is a mobile application developed using FlutterFlow that allows patients to chat with an AI assistant for medical diagnosis and doctor appointment scheduling. The AI assistant, powered by Google's Gemini LLM, provides a preliminary diagnosis based on the patient's symptoms and medical history. It recommends appropriate doctors based on their specialty, availability, and rating.
+This project is a mobile application developed using FlutterFlow that allows patients to chat with an AI assistant for medical diagnosis and doctor appointment scheduling. The AI assistant, powered by Google's Gemini 1.5 Pro, provides a preliminary diagnosis based on the patient's symptoms and medical history. It recommends appropriate doctors based on their specialty, availability, and rating.
 
 ## Project Structure
 
